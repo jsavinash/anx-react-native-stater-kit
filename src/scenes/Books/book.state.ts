@@ -1,6 +1,13 @@
-import {IBookState} from './book.model';
+import {IBookState, IBook} from '@scenes/Books/book.model';
 
-export const getLoginState = (): IBookState => ({
-  username: 'Avinash',
-  password: 'Nishad',
+export const getBookState = (): IBookState<IBook> => ({
+  ids: ['1'],
+  entities: {
+    '1': {
+      id: '',
+      name: '',
+      price: '',
+      image: '',
+    },
+  },
 });

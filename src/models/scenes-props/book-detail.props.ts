@@ -1,6 +1,6 @@
 import {RouteProp} from '@react-navigation/native';
 import {StackNavigationProp} from '@react-navigation/stack';
-import {RootStackParamList} from '../rootStackParamList';
+import {RootStackParamList} from '@models/rootStackParamList';
 
 type BookDetailSceneRouteProp = RouteProp<RootStackParamList, 'BookDetail'>;
 

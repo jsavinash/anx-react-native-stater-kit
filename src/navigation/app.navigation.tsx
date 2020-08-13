@@ -5,7 +5,7 @@ import Books from '../scenes/Books/Book';
 import BookDetail from '../scenes/BookDetail/BookDetail';
 import AddBook from '../scenes/AddBook/AddBook';
 import DeleteBook from '../scenes/DeleteBook/DeleteBook';
-import UpdateBook from '../scenes/UpdateBook/UpdateBook';
+import UpdateBook from '@scenes/UpdateBook/UpdateBook';
 import {navigationParams} from '../common/navigation';
 
 const Stack = createStackNavigator();

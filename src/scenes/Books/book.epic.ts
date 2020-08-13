@@ -1,9 +1,10 @@
 import {mergeMap, withLatestFrom} from 'rxjs/operators';
 import {ofType} from 'redux-observable';
-import {of, EMPTY} from 'rxjs';
-import BookActionTypes from './book.action-type';
+import {of} from 'rxjs';
+import BookActionTypes from '@scenes/Books/book.action-type';
+import * as bookAction from '@scenes/Books/book.action';
 
-export const addBookEpic = (action$, store$) =>
+export const addBookEpic = (action$: any, store$: any) =>
   action$.pipe(
     ofType(BookActionTypes.ADD_BOOK),
     withLatestFrom(store$),
@@ -11,6 +12,6 @@ export const addBookEpic = (action$, store$) =>
       const [action, store] = data;
       console.log('action------->', action);
       console.log('store', store);
-      return of(EMPTY);
+      return of(bookAction.noop());
     }),
   );

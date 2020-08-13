@@ -1,7 +1,7 @@
 export type RootStackParamList = {
-  Book: null;
-  BookDetail: null;
-  AddBook: null;
-  UpdateBook: null;
-  DeleteBook: null;
+  Book: undefined;
+  BookDetail: undefined;
+  AddBook: undefined;
+  UpdateBook: undefined;
+  DeleteBook: undefined;
 };

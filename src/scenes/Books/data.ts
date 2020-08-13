@@ -1,4 +1,4 @@
-import {IBook} from './book.model';
+import {IBook} from '@scenes/Books/book.model';
 
 export const books: IBook[] = [
   {

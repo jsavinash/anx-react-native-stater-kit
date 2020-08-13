@@ -1,7 +1,7 @@
 // external dependencies
 import {createAction} from '@reduxjs/toolkit';
-import BookActionTypes from './book.action-type';
-import {IBook} from './book.model';
+import BookActionTypes from '@scenes/Books/book.action-type';
+import {IBook} from '@scenes/Books/book.model';
 
 /**
  * A noop action. There are situations where we have to perform side-effect without
@@ -9,4 +9,8 @@ import {IBook} from './book.model';
  */
 export const addBook = createAction<IBook[], BookActionTypes.ADD_BOOK>(
   BookActionTypes.ADD_BOOK,
+);
+
+export const noop = createAction<undefined, BookActionTypes.NOOP>(
+  BookActionTypes.NOOP,
 );

@@ -7,9 +7,6 @@ import rootEpic from './epic';
 const store = configureStore({
   reducer,
   middleware,
-  preloadedState: {},
-  enhancers: [],
-  devTools: true,
 });
 
 epicMiddleware.run(rootEpic);

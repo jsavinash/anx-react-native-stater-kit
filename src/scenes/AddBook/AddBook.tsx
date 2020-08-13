@@ -1,6 +1,10 @@
 import * as React from 'react';
-import {BookDetailSceneProps} from '../../models/scenes-props/book-detail.props';
-import {StyledView, StyledText, StyledButton} from './add-book-styles';
+import {BookDetailSceneProps} from '@models/scenes-props/book-detail.props';
+import {
+  StyledView,
+  StyledText,
+  StyledButton,
+} from '@scenes/AddBook/add-book-styles';
 
 const AddBook = (props: BookDetailSceneProps) => {
   return (

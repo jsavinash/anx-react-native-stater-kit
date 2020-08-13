@@ -1,8 +1,7 @@
 // external dependencies
 import {createEntityAdapter, createReducer} from '@reduxjs/toolkit';
-import BookActionTypes from './book.action-type';
-import {IBook} from './book.model';
-import {RootState} from '../../app/reducer';
+import BookActionTypes, {IBookReducer} from '@scenes/Books/book.action-type';
+import {IBook, IBookState} from '@scenes/Books/book.model';
 
 /**
  * A noop action. There are situations where we have to perform side-effect without
@@ -16,30 +15,31 @@ const bookEntityAdapter = createEntityAdapter<IBook>({
 const jobInitialState = bookEntityAdapter.getInitialState({
   count: 10,
 });
-export const bookReducers = {};
+export const bookReducers: IBookReducer | {} = {};
 
 /**
  * Reducer to set state if video uploaded.
  * @param {Object} state The job state.
  */
-bookReducers[BookActionTypes.ADD_BOOK] = function (state, action) {
+(bookReducers as IBookReducer)[BookActionTypes.ADD_BOOK] = function (
+  state: IBookState<IBook>,
+  action: any,
+) {
   let books = action.payload;
   return bookEntityAdapter.addMany(state, books);
 };
 
-bookReducers[BookActionTypes.RESET_BOOKS] = function (state) {
+(bookReducers as IBookReducer)[BookActionTypes.RESET_BOOKS] = function (
+  state: IBookState<IBook>,
+) {
   return bookEntityAdapter.removeAll(state);
 };
-
-bookReducers[BookActionTypes.REMOVE_BOOK_BY_ID] = function () {};
-
-bookReducers[BookActionTypes.UPDATE_BOOK] = function () {};
 
 /**
  * State Selector to expose to components.
  */
 export const {selectAll: selectAllBooks} = bookEntityAdapter.getSelectors(
-  (state: RootState) => state.book,
+  (state: IBookState<IBook>) => state,
 );
 
 export default createReducer(jobInitialState, bookReducers);
